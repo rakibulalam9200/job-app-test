@@ -2,8 +2,8 @@ import React from 'react';
 
 import {Text, View,Image,StyleSheet,TouchableOpacity,TextInput} from 'react-native';
 //import {TextInput} from 'react-native-paper';
-import TextBox from 'react-native-password-eye';
-import {Touchable} from "react-native-web";
+//import TextBox from 'react-native-password-eye';
+//import {Touchable} from "react-native-web";
 import Eye from 'react-native-vector-icons/Feather';
 //import { TextInput } from 'react-native-paper';
 //import { AppLoading } from 'expo';
@@ -12,8 +12,7 @@ import Eye from 'react-native-vector-icons/Feather';
 
 //import {useFonts,Pacifico_400Regular} from "@expo-google-fonts/pacifico";
 
-const LoginScreen = () => {
-
+const LoginScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
@@ -27,6 +26,7 @@ const LoginScreen = () => {
                 type
             />
             <Text style={{marginBottom:6}}>Password</Text>
+
             <View style={{...styles.textInputStyle,...styles.passwordContainer}}>
                 <TextInput
                     style={{flex:1}}
@@ -35,12 +35,13 @@ const LoginScreen = () => {
 
                     // right={<TextInput.Icon name="eye-outline" color="#4D4D4D" />}
                 />
+
                 <Eye name="eye" size={14} style={{alignSelf: 'center',marginRight:10}}></Eye>
+
             </View>
 
-
-            <TouchableOpacity onPress={()=> }>
-                <Text style={styles.forgotPasswordStyle}>Forgot Password?</Text>
+            <TouchableOpacity onPress={()=> navigation.navigate('ForgetPassword')}>
+                <Text style={styles.forgotPasswordStyle}>Forget Password?</Text>
             </TouchableOpacity>
 
 
@@ -52,6 +53,8 @@ const LoginScreen = () => {
 
     );
 };
+
+
 const styles = StyleSheet.create({
     container:{
         marginHorizontal: 16,
@@ -77,7 +80,7 @@ const styles = StyleSheet.create({
     textInputStyle:{
         fontSize: 14,
         borderColor: '#E9E9E9',
-        borderRadius: 5,
+        borderRadius: 10,
         borderWidth: 1,
         height: 50,
         paddingHorizontal: 16,
@@ -94,9 +97,9 @@ const styles = StyleSheet.create({
     buttonStyle:{
         width:'100%',
         textAlign:'center',
-        height:43,
+        height:48,
         backgroundColor:'#0060AF',
-        paddingVertical:8,
+        paddingVertical:12,
         borderRadius:10,
         fontWeight:'bold',
         color:'white'
