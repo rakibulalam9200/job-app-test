@@ -1,33 +1,16 @@
 import React from 'react';
 
 import {Text, View} from 'react-native';
-import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
-import LoginScreen from "./LoginScreen";
-import ForgetPasswordScreen from "./ForgetPasswordScreen";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {Div,Button} from 'react-native-magnus';
 
-
-const Stack = createNativeStackNavigator();
-
-const navTheme = {
-    ...DefaultTheme,
-    colors: {
-        ...DefaultTheme.colors,
-        background: 'white',
-    },
-
-};
-
-
-const MainScreen = () => {
+const MainScreen = ({navigation}) => {
     return (
-        <NavigationContainer theme={navTheme}>
-            <Stack.Navigator>
-                <Stack.Screen  name="Login" component={LoginScreen} />
-                <Stack.Screen  name="ForgetPassword" component={ForgetPasswordScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <View style={{flex: 1, justifyContent:'center',alignItems:'center'}}>
+            <Button onPress={() => navigation.navigate('Login')} style={{flex: 1}} my="xl">Login</Button>
+            <Button onPress={() => navigation.navigate('Jobs')}  style={{flex: 1}}>Jobs Screen</Button>
+        </View>
     );
 };
 
 export default MainScreen;
+

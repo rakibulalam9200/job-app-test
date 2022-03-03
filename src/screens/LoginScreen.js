@@ -5,6 +5,7 @@ import {Text, View,Image,StyleSheet,TouchableOpacity,TextInput} from 'react-nati
 //import TextBox from 'react-native-password-eye';
 //import {Touchable} from "react-native-web";
 import Eye from 'react-native-vector-icons/Feather';
+import HeaderTitle from "../components/HeaderTitle";
 //import { TextInput } from 'react-native-paper';
 //import { AppLoading } from 'expo';
 
@@ -16,6 +17,7 @@ const LoginScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+
             <Image source={require('../../assets/images/login.png')} style={styles.image}/>
             <Text style={styles.textStyle}>Hello,{"\n"}Good to see you again!</Text>
             <Text style={{...styles.contentTextStyle,marginBottom:20}}>Log in to get going with our recruitment process!</Text>
@@ -57,6 +59,7 @@ const LoginScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container:{
+        paddingTop: Platform.OS === 'android' ? 25 : 0,
         marginHorizontal: 16,
         marginTop: 20,
 
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
         borderColor: '#E9E9E9',
         borderRadius: 10,
         borderWidth: 1,
-        height: 50,
+        height: 48,
         paddingHorizontal: 16,
         marginBottom:15,
 
