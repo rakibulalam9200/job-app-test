@@ -29,7 +29,6 @@ const ResetPasswordScreen = ({navigation}) => {
             <Input focusBorderColor="inputOutline" placeholder="New Password" mr={16} rounded="lg" fontSize="lg"
                    secureTextEntry
                    suffix={
-
                        <Icon name="eye" fontSize={18} color="normalText" fontFamily="Feather"/>}
             />
         </Div>
