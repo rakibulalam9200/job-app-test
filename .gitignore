@@ -2,6 +2,7 @@ node_modules/
 .expo/
 dist/
 .expo-shared/
+.idea/
 
 
 npm-debug.*
