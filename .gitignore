@@ -1,11 +1,8 @@
 node_modules/
 .expo/
 dist/
-yarn.lock/
-package-lock.json/
-.expo-shared/
-.idea/
-yarn-error.log/
+yarn.lock
+
 
 npm-debug.*
 *.jks
