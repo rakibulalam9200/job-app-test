@@ -4,7 +4,7 @@ dist/
 .expo-shared/
 .idea/
 yarn-error.log
-
+yarn.lock
 
 npm-debug.*
 *.jks
