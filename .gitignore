@@ -2,7 +2,7 @@ node_modules/
 .expo/
 dist/
 .expo-shared/
-yarn-error.log
+
 
 npm-debug.*
 *.jks
