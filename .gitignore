@@ -1,7 +1,7 @@
 node_modules/
 .expo/
 dist/
-yarn.lock
+.expo-shared/
 
 
 npm-debug.*
