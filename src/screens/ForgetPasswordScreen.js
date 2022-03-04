@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {View} from 'react-native';
 import {Div, Text, Image, Input, Button} from "react-native-magnus";
 import HeaderTitle from "../components/HeaderTitle";
@@ -13,7 +12,6 @@ const ForgetPasswordScreen = ({navigation}) => {
                    my={20}
                    source={require('../../assets/images/login.png')}
             >
-
             </Image>
             <Text fontSize="4xl" mb={8} color="headerText">Forgot Password?</Text>
             <Div color="normalText">
@@ -24,7 +22,7 @@ const ForgetPasswordScreen = ({navigation}) => {
 
             <Div row flexWrap="wrap" mt={40} mr={16}>
                 <Button
-                    onPress={()=> navigation.navigate('Login')}
+                    onPress={() => navigation.navigate('Login')}
                     flex={1}
                     h={48}
                     py="lg"
@@ -39,7 +37,7 @@ const ForgetPasswordScreen = ({navigation}) => {
                 >Login</Button>
 
                 <Button
-                    onPress={()=> navigation.navigate('ResetPassword')}
+                    onPress={() => navigation.navigate('ResetPassword')}
                     flex={3}
                     h={48}
                     py="lg"
@@ -51,7 +49,6 @@ const ForgetPasswordScreen = ({navigation}) => {
                     rounded="lg"
                     underlayColor="red100"
                 >Forgot Password</Button>
-
             </Div>
         </Div>
     );

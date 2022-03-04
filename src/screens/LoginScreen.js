@@ -1,6 +1,5 @@
 import React from 'react';
-
-import {Text, View,Image,StyleSheet,TouchableOpacity,TextInput} from 'react-native';
+import {Text, View, Image, StyleSheet, TouchableOpacity, TextInput, Platform} from 'react-native';
 //import {TextInput} from 'react-native-paper';
 //import TextBox from 'react-native-password-eye';
 //import {Touchable} from "react-native-web";
@@ -17,98 +16,83 @@ const LoginScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-
             <Image source={require('../../assets/images/login.png')} style={styles.image}/>
             <Text style={styles.textStyle}>Hello,{"\n"}Good to see you again!</Text>
-            <Text style={{...styles.contentTextStyle,marginBottom:20}}>Log in to get going with our recruitment process!</Text>
-            <Text style={{marginBottom:6}}>Email Address</Text>
+            <Text style={{...styles.contentTextStyle, marginBottom: 20}}>Log in to get going with our recruitment
+                process!</Text>
+            <Text style={{marginBottom: 6}}>Email Address</Text>
             <TextInput
-                style ={styles.textInputStyle}
+                style={styles.textInputStyle}
                 placeholder="email@mail.com"
-                type
             />
-            <Text style={{marginBottom:6}}>Password</Text>
+            <Text style={{marginBottom: 6}}>Password</Text>
 
-            <View style={{...styles.textInputStyle,...styles.passwordContainer}}>
+            <View style={{...styles.textInputStyle, ...styles.passwordContainer}}>
                 <TextInput
-                    style={{flex:1}}
+                    style={{flex: 1}}
                     placeholder="Input Password"
                     secureTextEntry={true}
-
                     // right={<TextInput.Icon name="eye-outline" color="#4D4D4D" />}
                 />
-
-                <Eye name="eye" size={14} style={{alignSelf: 'center',marginRight:10}}></Eye>
-
+                <Eye name="eye" size={14} style={{alignSelf: 'center', marginRight: 10}}></Eye>
             </View>
-
-            <TouchableOpacity onPress={()=> navigation.navigate('ForgetPassword')}>
+            <TouchableOpacity onPress={() => navigation.navigate('ForgetPassword')}>
                 <Text style={styles.forgotPasswordStyle}>Forget Password?</Text>
             </TouchableOpacity>
 
-
             <TouchableOpacity>
-                    <Text style={styles.buttonStyle}>Login</Text>
+                <Text style={styles.buttonStyle}>Login</Text>
             </TouchableOpacity>
-
         </View>
-
     );
 };
 
-
 const styles = StyleSheet.create({
-    container:{
+    container: {
         paddingTop: Platform.OS === 'android' ? 25 : 0,
         marginHorizontal: 16,
         marginTop: 20,
-
     },
-    image:{
+    image: {
         height: 80,
         width: 80,
-
     },
-    textStyle:{
+    textStyle: {
         fontSize: 24,
         marginTop: 20,
-        color:'#2B2B2B'
-
+        color: '#2B2B2B'
     },
-    contentTextStyle:{
+    contentTextStyle: {
         fontSize: 14,
         color: '#4D4D4D'
     },
-
-    textInputStyle:{
+    textInputStyle: {
         fontSize: 14,
         borderColor: '#E9E9E9',
         borderRadius: 10,
         borderWidth: 1,
         height: 48,
         paddingHorizontal: 16,
-        marginBottom:15,
-
-
+        marginBottom: 15,
     },
-    forgotPasswordStyle:{
-        fontSize:14,
-        alignSelf:"flex-end",
+    forgotPasswordStyle: {
+        fontSize: 14,
+        alignSelf: "flex-end",
         color: '#004D8C',
         marginBottom: 50,
     },
-    buttonStyle:{
-        width:'100%',
-        textAlign:'center',
-        height:48,
-        backgroundColor:'#0060AF',
-        paddingVertical:12,
-        borderRadius:10,
-        fontWeight:'bold',
-        color:'white'
+    buttonStyle: {
+        width: '100%',
+        textAlign: 'center',
+        height: 48,
+        backgroundColor: '#0060AF',
+        paddingVertical: 12,
+        borderRadius: 10,
+        fontWeight: 'bold',
+        color: 'white'
     },
-    passwordContainer:{
-        flexDirection:'row',
+    passwordContainer: {
+        flexDirection: 'row',
     }
 })
 export default LoginScreen;
